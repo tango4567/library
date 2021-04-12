@@ -3,6 +3,13 @@ package com.sowmitras.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+/**
+ *  @author tango4567
+ *  @version 0.0.1+
+ *
+ ***/
+
+
 public class LocalDatabase {
 
     protected static Context context;
@@ -27,10 +34,12 @@ public class LocalDatabase {
     }
 
     /**
-     * @param keyName
-     * @param keyValue
+     *
+     * @param keyName Give key name
+     * @param keyValue Give Key Value
+     * * Write String Value to Shared Preference
      * */
-    public static void writeValue(String keyName, String keyValue){
+    public static void writeStringValue(String keyName, String keyValue){
         editor = sharedPreferences.edit();
         editor.putString(keyName, keyValue);
         editor.apply();
@@ -40,8 +49,48 @@ public class LocalDatabase {
      * @param keyName
      * @return String
      * */
-    public static String readValue(String keyName){
+    public static String readStringValue(String keyName){
         return sharedPreferences.getString(keyName,"");
     }
+
+    /**
+     * @param keyName
+     * @param keyValue
+     *
+     * */
+    public static void writeBooleanValue(String keyName, boolean keyValue){
+        editor = sharedPreferences.edit();
+        editor.putBoolean(keyName, keyValue);
+        editor.apply();
+    }
+
+    /**
+     * @param keyName
+     * @return Boolean
+     * */
+    public static Boolean readBooleanValue(String keyName){
+        return sharedPreferences.getBoolean(keyName,false);
+    }
+
+
+    /**
+     * @param keyName
+     * @param keyValue
+     *
+     * */
+    public static void writeIntegerValue(String keyName, Integer keyValue){
+        editor = sharedPreferences.edit();
+        editor.putInt(keyName, keyValue);
+        editor.apply();
+    }
+
+    /**
+     * @param keyName
+     * @return Boolean
+     * */
+    public static Integer readIntegerValue(String keyName){
+        return sharedPreferences.getInt(keyName,0);
+    }
+
 
 }
