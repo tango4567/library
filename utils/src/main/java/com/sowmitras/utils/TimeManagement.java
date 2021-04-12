@@ -8,7 +8,7 @@ public class TimeManagement {
 
     public static String getCurrentTimeAndDate() {
         Date date = new Date();
-        String strDateFormat = "yyyy-mm-dd HH:MM:SS";
+        String strDateFormat = "yyyy-MM-dd hh:mm:ss";
         SimpleDateFormat dateFormat = new SimpleDateFormat(strDateFormat, Locale.getDefault());
         return dateFormat.format(date);
     }
