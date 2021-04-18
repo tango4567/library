@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.sowmitras.utils.CheckEmptyString;
 import com.sowmitras.utils.LocalDatabase;
 import com.sowmitras.utils.TimeManagement;
 
@@ -29,6 +30,21 @@ public class MainActivity extends AppCompatActivity {
         print(String.valueOf(LocalDatabase.readIntegerValue("integer")));
 
         print(TimeManagement.getCurrentTimeAndDate()); //<<<<<<<TODO Time Management Usage
+
+        String temp = null; //<<<<<<<TODO CheckEmptyString
+        print("Null "+String.valueOf(new CheckEmptyString().check(temp)));
+
+        temp = "";
+        print("Empty "+String.valueOf(new CheckEmptyString().check(temp)));
+
+        temp = "      ";
+        print("WhiteSpace "+String.valueOf(new CheckEmptyString().check(temp)));
+
+        temp = "   asdasdad   ";
+        print("WhiteSpace with character "+String.valueOf(new CheckEmptyString().check(temp)));
+
+        temp = "asda  sda";
+        print("Character "+String.valueOf(new CheckEmptyString().check(temp)));
 
     }
 }
