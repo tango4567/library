@@ -2,6 +2,7 @@ package com.sowmitras.library;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.sowmitras.utils.CheckEmptyString;
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
         temp = "asda  sda";
         print("Character "+String.valueOf(new CheckEmptyString().check(temp)));
+
+        SharedPreferences sharedPreferences = localDatabase.getMySharedPreference();
 
     }
 }
