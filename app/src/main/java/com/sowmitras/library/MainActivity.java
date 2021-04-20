@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 
 import com.sowmitras.utils.CheckEmptyString;
 import com.sowmitras.utils.LocalDatabase;
+import com.sowmitras.utils.ReadyMade;
 import com.sowmitras.utils.TimeManagement;
 
 import static com.sowmitras.utils.Tout.print;
@@ -49,5 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = localDatabase.getMySharedPreference();
 
+    }
+
+    public void shareContent(View view) {
+        new ReadyMade().shareContent(this, "https://tarunmahajan.com","I found great photos.." ,"This site content different kind of photos which is captured by *Tarun Mahajan* with the help of mobile phone. Must");
     }
 }
