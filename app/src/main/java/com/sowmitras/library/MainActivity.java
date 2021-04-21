@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.sowmitras.utils.CheckEmptyString;
 import com.sowmitras.utils.LocalDatabase;
@@ -16,13 +17,17 @@ import static com.sowmitras.utils.Tout.print;
 public class MainActivity extends AppCompatActivity {
 
     LocalDatabase localDatabase;
-
+    ReadyMade readyMade;
+    TextView textView2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        readyMade = new ReadyMade();
         localDatabase = new LocalDatabase(this, "library");  //<<<<<<<TODO LocalDatabase usage
+        textView2 = findViewById(R.id.textView2);
+
+        textView2.setText(readyMade.getDeviceName()); //TODO: Get device brand and model name
 
         LocalDatabase.writeBooleanValue("boolean", true);
         LocalDatabase.writeIntegerValue("integer", 100);
@@ -51,9 +56,10 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = localDatabase.getMySharedPreference();
 
+
     }
 
     public void shareContent(View view) {
-        new ReadyMade().shareContent(this, "https://tarunmahajan.com","I found great photos.." ,"This site content different kind of photos which is captured by *Tarun Mahajan* with the help of mobile phone. Must");
+        readyMade.shareContent(this, "https://tarunmahajan.com","I found great photos.." ,"This site content different kind of photos which is captured by *Tarun Mahajan* with the help of mobile phone. Must");
     }
 }
