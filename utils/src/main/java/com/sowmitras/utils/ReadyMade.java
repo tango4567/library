@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
@@ -50,4 +51,14 @@ public class ReadyMade {
         }
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
+
+    /**
+     * Calculate Number of Columns
+     **/
+    public static int calculateNoOfColumns(Context context, float width, float correction) {
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        float main = displayMetrics.widthPixels / displayMetrics.density;
+        return (int) (main / width + correction);
+    }
+
 }

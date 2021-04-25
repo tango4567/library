@@ -105,4 +105,13 @@ public class LocalDatabase {
         editor = sharedPreferences.edit();
         return editor;
     }
+
+    /**
+     * @return Clear Shared Preference Clear
+     */
+    public static void clearAllSharedPreference(){
+        editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+    }
 }
