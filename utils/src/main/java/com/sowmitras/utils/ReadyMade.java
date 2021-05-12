@@ -7,6 +7,7 @@ import android.os.Build;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -59,6 +60,19 @@ public class ReadyMade {
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
         float main = displayMetrics.widthPixels / displayMetrics.density;
         return (int) (main / width + correction);
+    }
+
+    /**
+     * Return ArrayAdapter for Spinner
+     * @param context
+     * @param arrayList
+     * @param item
+     * @param dropDownItem
+     **/
+    public static ArrayAdapter<CharSequence> setSpinner(Context context, int arrayList, int item, int dropDownItem){
+        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(context, arrayList,item);
+        arrayAdapter.setDropDownViewResource(dropDownItem);
+        return arrayAdapter;
     }
 
 }
