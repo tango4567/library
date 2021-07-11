@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,30 +14,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="356dp" />
 
     <Button
         android:id="@+id/shareBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="share"
         android:onClick="shareContent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        android:text="share"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="163dp" />
+
+    <Button
+        android:id="@+id/showFullScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showFullScreen"
+        android:text="FullScreen"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="115dp" />
+
+    <Button
+        android:id="@+id/hideFullScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="hideFullScreen"
+        android:text="HideScreen"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="67dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SnackBar"
         android:onClick="ShowSnackBar"
-        app:layout_constraintBottom_toBottomOf="@+id/shareBtn"
-        app:layout_constraintEnd_toStartOf="@+id/shareBtn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        android:text="SnackBar"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="19dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
